@@ -10,7 +10,6 @@
     <!-- React -->
     <script src="https://fb.me/react-0.14.1.min.js"></script>
     <script src="https://fb.me/react-dom-0.14.1.min.js"></script>
-    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
 
     <style>
 
@@ -28,22 +27,45 @@
     
     <div id="example"></div>
     
-    <script type="text/jsx">
+     <script>
+    // Since JSX is deprecated, we have to remove it from our app
+
+var HelloWorld = React.createClass({
+  displayName: "HelloWorld",
+
+  render: function render() {
+
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "h1",
+        null,
+        "Hello ",
+        this.props.name,
+        "!"
+      )
+    );
+  }
+
+});
+
+React.render(React.createElement(HelloWorld, { name: "Sumayyah" }), document.getElementById('example'));
  
-      var HelloWorld = React.createClass({
-        render: function() {
+      // var HelloWorld = React.createClass({
+      //   render: function() {
 
-          return (
-                  <div>
-                    <h1>Hello World!</h1>
-                  </div>
+      //     return (
+      //             <div>
+      //               <h1>Hello {this.props.name}!</h1>
+      //             </div>
 
-          );
-        }
+      //     );
+      //   }
 
-      });
+      // });
 
-      React.render(<HelloWorld />, document.body);
+      // React.render(<HelloWorld  name="Sumayyah"/>, document.getElementById('example'));
 
     </script>
   </body>
