@@ -1,42 +1,41 @@
-<!DOCTYPE html>
-<html>
-  
-  <title>TODO APP with React.js </title>
-  <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+var Todo = React.createClass({    
 
-
-    <!-- React -->
-    <script src="https://fb.me/react-0.14.1.min.js"></script>
-    <script src="https://fb.me/react-dom-0.14.1.min.js"></script>
-
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-
-  <body>
-
-
-    <div class="container">
-
-        <div class="row">
-
-              <div class="col-md-7 col-md-offset-1">
-
-                  <div id="todo"></div> 
-
-              </div>
-
-        </div>
-          
-
-    </div>
+    render: function() {
       
-    
-    <script src="build/script.js"></script>
-  </body>
+           return (
 
 
-  </script>
 
-</html>
+                <ul>
+                    <li className="todo">{this.props.todo}</li>
+
+                </ul>
+            
+       );
+    },
+      
+
+});
+
+
+React.render(<div>
+
+                <h1>Things to DO</h1>
+
+                <div className="form-inline">
+
+                    <div className="form-group">
+                        <input className="form-control" placeholder='Add Todo' />
+                        <button className="btn btn-default btn-sm">+</button>
+
+                    </div>
+
+                </div>
+
+            <Todo todo="Call House" />
+            <Todo todo="Go to Trader Joe's" />
+            <Todo todo="Learn React" />
+            </div>,
+  
+            document.getElementById('todo')
+            );
