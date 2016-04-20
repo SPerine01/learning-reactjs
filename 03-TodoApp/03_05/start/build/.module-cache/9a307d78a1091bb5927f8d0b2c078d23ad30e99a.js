@@ -42,7 +42,7 @@ var Todo = React.createClass({displayName: "Todo",
             React.createElement("input", {type: "text", placeholder: "Edit Todo", defaultValue: this.props.children})
           ), 
 
-          React.createElement("button", {onClick: this.save, className: "btn btn-default btn-sm glyphicon glyphicon-floppy-disk pull-right"})
+          React.createElement("button", {onClick: this.save, className: "btn btn-default btn-sm glyphicon glyphicon-trash remove pull-right"})
 
         )    
        );

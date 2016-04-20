@@ -42,13 +42,18 @@ var Todo = React.createClass({
             <input type="text" placeholder="Edit Todo" defaultValue={this.props.children} />
           </span>
 
-          <button onClick={this.save} className="btn btn-default btn-sm glyphicon glyphicon-trash remove pull-right" />
+          <button onClick={this.save} className="btn btn-default btn-sm glyphicon glyphicon-floppy-disk pull-right" />
 
         </li>    
        );
     },
 
     render: function() {
+      if(this.state.editing) {
+        return this.toDoForm();
+      } else {
+        return this.toDoDisplay();
+      }
     }
 });
 
