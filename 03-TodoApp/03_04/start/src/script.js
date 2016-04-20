@@ -1,11 +1,23 @@
 var Todo = React.createClass({    
 
+    edit: function() {
+        alert("edit todo");
+    },
+
+    delete: function() {
+        alert("Todo removed");
+    },
+
     render: function() {
       
            return (
             <div>
 
-                  <li className="todo">{this.props.children}</li>
+                  <li className="todo">
+                    <span onClick={this.edit}>
+                    {this.props.children}
+                    </span>
+                  </li>
           
             </div>
        );
@@ -13,7 +25,6 @@ var Todo = React.createClass({
       
 
 });
-
 
 React.render(<div>
                 <h1>Things to Do</h1>
