@@ -1,8 +1,12 @@
 var Todo = React.createClass({    
 
+  getInitialState: function () {
+    return {editing:false}
+  },
     
     edit: function() {
       alert('edit todo');
+      this.setState({editing:true});
     },
 
     remove: function() {
