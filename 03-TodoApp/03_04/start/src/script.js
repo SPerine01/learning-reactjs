@@ -17,6 +17,9 @@ var Todo = React.createClass({
                     <span onClick={this.edit}>
                     {this.props.children}
                     </span>
+
+                    <button className="btn btn-default btn-sm glyicon glyicon-trash remove pull-right" />
+
                   </li>
           
             </div>
