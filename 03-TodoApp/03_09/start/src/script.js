@@ -8,8 +8,7 @@ var Todo = React.createClass({
     }, 
 
     remove: function() {
-
-      alert('Todo removed');
+      this.props.onRemove(this.props.index);
     },
     save: function() {
         var val = this.refs.newValue.getDOMNode().value;
@@ -94,10 +93,19 @@ var TodoList = React.createClass({
     arr[i] = newValue;
     this.setState({todos: arr});
   },
+
+  remove: function () {
+    var arr = this.state.todos;
+    arr.splice(i, 1);
+    this.setState({todos: arr})
+    console.log("Todo#: " +(i + 1) + " deleted");
+  },
+
   eachTodo: function(todo, i) {
     return <Todo key={i}
                  index={i}
-                 onChange={this.update} >
+                 onChange = {this.update}
+                 onRemove = {this.remove} >
             {todo}
            </Todo>
   },
@@ -132,15 +140,3 @@ var TodoList = React.createClass({
 
 
 React.render(<TodoList />, document.getElementById('todo'));
-
-
-
-
-
-
-
-
-
-
-
-
